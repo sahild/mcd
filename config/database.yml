@@ -9,10 +9,10 @@ common: &common
 
 development:
   <<: *common
-  database: ht_dev
+  database: mc_dev
 
 
 production:
   <<: *common
-  database: ht_dev
+  database: mc_dev
   
