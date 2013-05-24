@@ -7,6 +7,7 @@ gem 'rails', '3.0.20'
 gem 'mysql2', '0.2.18' #0.2.18
 gem 'httparty', '0.9.0'
 gem 'geocoder', '1.1.0'
+gem 'whenever', :require => false
 gem 'unicorn', :require => false
 
 # Use unicorn as the web server

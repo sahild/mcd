@@ -31,6 +31,7 @@ GEM
     activesupport (3.0.20)
     arel (2.0.10)
     builder (2.1.2)
+    chronic (0.9.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     geocoder (1.1.0)
@@ -82,6 +83,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    whenever (0.8.2)
+      activesupport (>= 2.3.4)
+      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -93,3 +97,4 @@ DEPENDENCIES
   rails (= 3.0.20)
   rake (~> 0.9)
   unicorn
+  whenever
