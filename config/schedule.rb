@@ -5,7 +5,8 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+ set :output, "cron_log.log"
+ job_type :rake,    "cd :path && RAILS_ENV=development bundle exec rake :task --silent :output"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -13,8 +14,8 @@
 #   rake "some:great:rake:task"
 # end
 #
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
+# every 2.minutes do
+ # rake "trial:bank"
 # end
 
 # Learn more: http://github.com/javan/whenever

@@ -5,9 +5,8 @@ class CreateDeals < ActiveRecord::Migration
       t.string :desc, :limit => 5000
       t.string :vendor
       t.string :imageurl
-      t.string :validupto
+      t.datetime :validupto
       t.string :location
-      t.integer :card_type_id
 
       t.timestamps
     end

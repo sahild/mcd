@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524071730) do
+ActiveRecord::Schema.define(:version => 20130524111754) do
 
   create_table "banks", :force => true do |t|
     t.string   "name"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20130524071730) do
     t.datetime "updated_at"
   end
 
-  create_table "card_types", :force => true do |t|
-    t.string   "type"
+  create_table "cards", :force => true do |t|
+    t.string   "card_type"
     t.string   "category"
     t.string   "name"
     t.integer  "bank_id"
@@ -28,14 +28,21 @@ ActiveRecord::Schema.define(:version => 20130524071730) do
     t.datetime "updated_at"
   end
 
+  create_table "cards_deals", :id => false, :force => true do |t|
+    t.integer "card_id", :limit => 8
+    t.integer "deal_id", :limit => 8
+  end
+
+  add_index "cards_deals", ["card_id"], :name => "index_cards_deals_on_card_id"
+  add_index "cards_deals", ["deal_id"], :name => "index_cards_deals_on_deal_id"
+
   create_table "deals", :force => true do |t|
-    t.string   "schemetext",   :limit => 1000
-    t.string   "desc",         :limit => 5000
+    t.string   "schemetext", :limit => 1000
+    t.string   "desc",       :limit => 5000
     t.string   "vendor"
     t.string   "imageurl"
-    t.string   "validupto"
+    t.datetime "validupto"
     t.string   "location"
-    t.integer  "card_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

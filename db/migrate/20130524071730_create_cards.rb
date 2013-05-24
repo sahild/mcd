@@ -1,7 +1,7 @@
-class CreateCardTypes < ActiveRecord::Migration
+class CreateCards < ActiveRecord::Migration
   def self.up
-    create_table :card_types do |t|
-      t.string :type
+    create_table :cards do |t|
+      t.string :card_type
       t.string :category
       t.string :name
       t.integer :bank_id
@@ -11,6 +11,6 @@ class CreateCardTypes < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :card_types
+    drop_table :cards
   end
 end
